@@ -6,28 +6,38 @@ public class MovementBetter : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed = 5f;
-    //public bool gc;
+    public int jumpPower = 5;
+    public bool gc;
 
     
-    //Pokusavam da napravim da je groundCheck bool iz GroundCheck skripte ovde, nisam uspeo da razumem tutorijal. Nakon sto uspem da napravim ground check referencu u kodu napravicu da igrac skace pomocu toga
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-      //  gc = gc.GetComponent<groundCheck>();    
+        rb = GetComponent<Rigidbody2D>();    
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Making sure that gc is up to date with the groundCheck bool from GroundCheck.cs script
+        gc = GetComponentInChildren<GroundCheck>().groundCheck;
+        
         //A-D movement input for the player, will add the jump later 
         if(Input.GetKey(KeyCode.A))
         {
-            rb.velocity = new Vector2(-speed, 0);
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
         }
         if(Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(speed, 0);
+            rb.velocity = new Vector2(speed, rb.velocity.y);
         }
+
+        //Jump with space/w key
+
+        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && gc == true)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        }
+
+
         
     }
 }
