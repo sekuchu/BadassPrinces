@@ -8,6 +8,7 @@ public class MovementBetter : MonoBehaviour
     public float speed = 5f;
     public int jumpPower = 7;
     public bool gc;
+    private int n = 1;
 
     Vector2 originalScale;
 
@@ -25,10 +26,20 @@ public class MovementBetter : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            if ( n > 0 )
+            {
+                transform.Rotate(0f,180f,0f);
+                n = -1;
+            }
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            if ( n < 0 )
+            {
+                transform.Rotate(0f,180f,0f);
+                n = 1;
+            }
         }
         else
         {
@@ -54,6 +65,8 @@ public class MovementBetter : MonoBehaviour
             speed = 5f;
             jumpPower = 7;
         }
+
+        // Flip the player when he moves left or right
 
     }
 }
