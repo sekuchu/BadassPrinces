@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2250194812470654697, guid: 23e1405db2347ea4bb0f4ad591ee4843, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4195e6901af4a9346a14cf6b99dea26e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e1405db2347ea4bb0f4ad591ee4843, type: 3}
 --- !u!1 &891030532
@@ -429,6 +433,30 @@ PrefabInstance:
     - target: {fileID: 261173425943760478, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -154.599
+      objectReference: {fileID: 0}
+    - target: {fileID: 261173425943760479, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261173425943760479, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261173425943760479, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 261173425943760479, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 261173425943760479, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.014492035
+      objectReference: {fileID: 0}
+    - target: {fileID: 261173425943760479, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.23809204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f3a02b1c0e529b4887be9ad06315b2a, type: 3}
