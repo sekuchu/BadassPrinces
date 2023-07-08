@@ -19,6 +19,10 @@ public class Laser : MonoBehaviour
         if (hit.collider)
         {
             _lineRenderer.SetPosition(1, new Vector3(hit.point.x, hit.point.y, transform.position.z));
+            if(gameObject.tag == "Player")
+            {
+                Debug.Log("Player died");
+            }
         }
         else
         {
