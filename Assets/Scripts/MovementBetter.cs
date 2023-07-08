@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementBetter : MonoBehaviour
 {
+    public Animator animator;
     public Rigidbody2D rb;
     public float speed = 5f;
     public int jumpPower = 7;
@@ -33,6 +34,7 @@ public class MovementBetter : MonoBehaviour
                 transform.Rotate(0f,180f,0f);
                 n = -1;
             }
+            animator.SetFloat("Speed",1);
         }
         else if (Input.GetKey(KeyCode.D))
         {
@@ -42,9 +44,11 @@ public class MovementBetter : MonoBehaviour
                 transform.Rotate(0f,180f,0f);
                 n = 1;
             }
+            animator.SetFloat("Speed",1);
         }
         else
         {
+            animator.SetFloat("Speed",0);
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
 
