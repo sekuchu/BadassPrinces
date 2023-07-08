@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   airCheck: 0
-  airCheckTransform: {fileID: 0}
+  airCheckTransform: {fileID: 2018074706}
 --- !u!1 &2033539005
 GameObject:
   m_ObjectHideFlags: 0
