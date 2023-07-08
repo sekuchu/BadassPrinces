@@ -13,20 +13,22 @@ public class Laser : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+{
+    _lineRenderer.SetPosition(0, transform.position);
+    RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up);
+    if (hit.collider)
     {
-        _lineRenderer.SetPosition(0, transform.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up);
-        if (hit.collider)
+        _lineRenderer.SetPosition(1, new Vector3(hit.point.x, hit.point.y, transform.position.z));
+        
+        if (hit.collider.CompareTag("Player"))
         {
-            _lineRenderer.SetPosition(1, new Vector3(hit.point.x, hit.point.y, transform.position.z));
-            if(gameObject.tag == "Player")
-            {
-                Debug.Log("Player died");
-            }
-        }
-        else
-        {
-            _lineRenderer.SetPosition(1, transform.up * 2000);
+            Debug.Log("Player Died");
+            // ovde moramo skriptu za smrt stavit
         }
     }
+    else
+    {
+        _lineRenderer.SetPosition(1, transform.up * 2000);
+    }
+}
 }
