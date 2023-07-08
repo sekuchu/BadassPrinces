@@ -6,40 +6,54 @@ public class MovementBetter : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed = 5f;
-    public int jumpPower = 5;
+    public int jumpPower = 7;
     public bool gc;
 
-    
+    Vector2 originalScale;
+
     void Start()
     {
-        
-        // Declaring Rigidbody2D with a nickname rb
         rb = GetComponent<Rigidbody2D>();    
+        originalScale = transform.localScale;
     }
 
     void Update()
     {
-        //Making sure that gc is up to date with the groundCheck bool from GroundCheck.cs script
         gc = GetComponentInChildren<GroundCheck>().groundCheck;
         
-        //A-D movement input for the player, will add the jump later 
-        if(Input.GetKey(KeyCode.A))
+        // A-D movement input for the player
+        if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
         }
-        if(Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
         }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
 
-        //Jump with space/w key
-
-        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && gc == true)
+        // Jump with space/w key
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && gc == true)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
 
+        // Crouch with C key
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            transform.localScale = new Vector2(originalScale.x, originalScale.y * 0.5f);
+            speed = 2f;
+            jumpPower = 0;
+        }
+        else if (Input.GetKeyUp(KeyCode.C))
+        {
+            transform.localScale = originalScale;
+            speed = 5f;
+            jumpPower = 7;
+        }
 
-        
     }
 }
