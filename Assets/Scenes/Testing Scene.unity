@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 61874006}
   - component: {fileID: 61874005}
   - component: {fileID: 61874007}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floating Block
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61874004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1369, y: -3.03, z: 0}
+  m_LocalPosition: {x: 4.1369, y: -3.38, z: 0}
   m_LocalScale: {x: 6.7272625, y: 0.9204306, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -429,6 +429,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &2018074705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018074706}
+  - component: {fileID: 2018074707}
+  m_Layer: 0
+  m_Name: AirCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2018074706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018074705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.281, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5826463953454692539}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2018074707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018074705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3064ebb425b71847aada58971b28e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airCheck: 0
+  airCheckTransform: {fileID: 0}
 --- !u!1001 &2097584453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -543,3 +589,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42b859ddc818ce3409416d7ab4570586, type: 3}
+--- !u!4 &5826463953454692539 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7751216299037985139, guid: 42b859ddc818ce3409416d7ab4570586, type: 3}
+  m_PrefabInstance: {fileID: 4272253793152299464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5826463953454692540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751216299037985140, guid: 42b859ddc818ce3409416d7ab4570586, type: 3}
+  m_PrefabInstance: {fileID: 4272253793152299464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5826463953454692544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5826463953454692540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3064ebb425b71847aada58971b28e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airCheck: 0
+  airCheckTransform: {fileID: 2018074706}
