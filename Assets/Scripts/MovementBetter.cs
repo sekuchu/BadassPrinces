@@ -52,21 +52,6 @@ public class MovementBetter : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
 
-        // Crouch with C key
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            transform.localScale = new Vector2(originalScale.x, originalScale.y * 0.5f);
-            speed = 2f;
-            jumpPower = 0;
-        }
-        else if (Input.GetKeyUp(KeyCode.C))
-        {
-            transform.localScale = originalScale;
-            speed = 5f;
-            jumpPower = 7;
-        }
-
-        // Flip the player when he moves left or right
 
     }
 }
