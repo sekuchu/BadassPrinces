@@ -51,7 +51,15 @@ public class MovementBetter : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
+        // Crouch with C key
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            transform.localScale = new Vector2(originalScale.x, originalScale.y * 0.5f);
 
-
+        }
+        else if (Input.GetKeyUp(KeyCode.C))
+        {
+            transform.localScale = originalScale;
+        }
     }
 }
