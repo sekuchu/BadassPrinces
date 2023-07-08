@@ -12,6 +12,8 @@ public class MovementBetter : MonoBehaviour
     
     void Start()
     {
+        
+        // Declaring Rigidbody2D with a nickname rb
         rb = GetComponent<Rigidbody2D>();    
     }
 
