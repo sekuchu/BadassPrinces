@@ -5,7 +5,6 @@ using UnityEngine;
 public class AirCheck : MonoBehaviour
 {
     public bool airCheck;
-    [SerializeField] private Transform airCheckTransform; // Renamed the variable to avoid naming conflicts
     
     // Start is called before the first frame update
     void Start()
@@ -16,7 +15,6 @@ public class AirCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(airCheck);
 
         if (AirCheckGround())
         {

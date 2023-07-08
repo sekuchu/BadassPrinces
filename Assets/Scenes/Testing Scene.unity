@@ -454,7 +454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018074705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.281, z: 0}
+  m_LocalPosition: {x: 0, y: 0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -659,6 +659,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7751216299037985143, guid: 42b859ddc818ce3409416d7ab4570586, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 5826463953454692547}
+    - target: {fileID: 7751216299037985143, guid: 42b859ddc818ce3409416d7ab4570586, type: 3}
+      propertyPath: jumpPower
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42b859ddc818ce3409416d7ab4570586, type: 3}
 --- !u!4 &5826463953454692539 stripped
@@ -685,3 +693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airCheck: 0
   airCheckTransform: {fileID: 2018074706}
+--- !u!50 &5826463953454692547 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7751216299037985142, guid: 42b859ddc818ce3409416d7ab4570586, type: 3}
+  m_PrefabInstance: {fileID: 4272253793152299464}
+  m_PrefabAsset: {fileID: 0}

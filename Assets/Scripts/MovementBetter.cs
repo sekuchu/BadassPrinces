@@ -8,6 +8,7 @@ public class MovementBetter : MonoBehaviour
     public float speed = 5f;
     public int jumpPower = 7;
     public bool gc;
+    public bool ac;
     private int n = 1;
 
     Vector2 originalScale;
@@ -21,6 +22,7 @@ public class MovementBetter : MonoBehaviour
     void Update()
     {
         gc = GetComponentInChildren<GroundCheck>().groundCheck;
+        ac = GetComponentInChildren<AirCheck>().airCheck;
         
         // A-D movement input for the player
         if (Input.GetKey(KeyCode.A))
@@ -55,11 +57,15 @@ public class MovementBetter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             transform.localScale = new Vector2(originalScale.x, originalScale.y * 0.5f);
+            speed = 2f;
+            jumpPower = 0;
 
         }
-        else if (Input.GetKeyUp(KeyCode.C))
+        else if (Input.GetKeyUp(KeyCode.C) && ac == false)
         {
             transform.localScale = originalScale;
+            speed = 5f;
+            jumpPower = 7; 
         }
     }
 }
