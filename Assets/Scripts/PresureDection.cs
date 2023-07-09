@@ -14,7 +14,7 @@ public class PresureDection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(pressureOn);
+
     }
 
 
