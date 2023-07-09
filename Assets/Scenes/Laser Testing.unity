@@ -864,7 +864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 478514717963812152, guid: 569ed28216240b8409f17bbf382b487a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9934
+      value: -1.19
       objectReference: {fileID: 0}
     - target: {fileID: 478514717963812152, guid: 569ed28216240b8409f17bbf382b487a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -911,6 +911,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1473116064854199032, guid: 7122eff0856605145b086cf4c30e33ff, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2197278117881147817, guid: 7122eff0856605145b086cf4c30e33ff, type: 3}
       propertyPath: m_Material
       value: 
