@@ -100,6 +100,16 @@ public class MovementBetter : MonoBehaviour
             isCrouching = false; // Set the crouching flag to false
         }
 
+        // Jump Animation
+        if( gc == true)
+        {
+            animator.SetFloat("Jump", 0);
+        }
+        else
+        {
+            animator.SetFloat("Jump", 1);
+        }
+
         //Function that will create dust particles at player feet
         void CreateDust()
         {
