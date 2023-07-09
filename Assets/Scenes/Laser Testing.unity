@@ -821,6 +821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableCube
       objectReference: {fileID: 0}
+    - target: {fileID: 478514717963812148, guid: 569ed28216240b8409f17bbf382b487a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 478514717963812152, guid: 569ed28216240b8409f17bbf382b487a, type: 3}
       propertyPath: m_RootOrder
       value: 4
