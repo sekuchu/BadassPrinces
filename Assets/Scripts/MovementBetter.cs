@@ -11,44 +11,49 @@ public class MovementBetter : MonoBehaviour
     public bool gc;
     public bool ac;
     private int n = 1;
+    private bool isCrouching = false; // Flag to track if the player is already crouching
 
     Vector2 originalScale;
+    BoxCollider2D boxCollider;
+    Vector2 originalOffset; // Store the original offset value
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
         originalScale = transform.localScale;
+        boxCollider = GetComponent<BoxCollider2D>();
+        originalOffset = boxCollider.offset; // Store the initial offset
     }
 
     void Update()
     {
         gc = GetComponentInChildren<GroundCheck>().groundCheck;
         ac = GetComponentInChildren<AirCheck>().airCheck;
-        
+
         // A-D movement input for the player
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            if ( n > 0 )
+            if (n > 0)
             {
-                transform.Rotate(0f,180f,0f);
+                transform.Rotate(0f, 180f, 0f);
                 n = -1;
             }
-            animator.SetFloat("Speed",1);
+            animator.SetFloat("Speed", 1);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            if ( n < 0 )
+            if (n < 0)
             {
-                transform.Rotate(0f,180f,0f);
+                transform.Rotate(0f, 180f, 0f);
                 n = 1;
             }
-            animator.SetFloat("Speed",1);
+            animator.SetFloat("Speed", 1);
         }
         else
         {
-            animator.SetFloat("Speed",0);
+            animator.SetFloat("Speed", 0);
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
 
@@ -57,19 +62,29 @@ public class MovementBetter : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
+
         // Crouch with C key
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && gc == true && !isCrouching) // Only crouch if not already crouching
         {
-            transform.localScale = new Vector2(originalScale.x, originalScale.y * 0.5f);
+            // Shrink the BoxCollider2D when crouching
+            boxCollider.size = new Vector2(boxCollider.size.x, boxCollider.size.y * 0.5f);
+            boxCollider.offset = new Vector2(boxCollider.offset.x, originalOffset.y - boxCollider.size.y * 0.25f);
+
             speed = 2f;
             jumpPower = 0;
-
+            animator.SetFloat("Crouch", 1);
+            isCrouching = true; // Set the crouching flag to true
         }
-        else if (Input.GetKeyUp(KeyCode.C) && ac == false)
+        else if (Input.GetKeyUp(KeyCode.C) && ac == false && isCrouching) // Only restore if already crouching
         {
-            transform.localScale = originalScale;
+            // Restore the original size and offset of the BoxCollider2D
+            boxCollider.size = new Vector2(boxCollider.size.x, boxCollider.size.y * 2f);
+            boxCollider.offset = originalOffset;
+
             speed = 5f;
-            jumpPower = 7; 
+            jumpPower = 7;
+            animator.SetFloat("Crouch", 0);
+            isCrouching = false; // Set the crouching flag to false
         }
     }
 }

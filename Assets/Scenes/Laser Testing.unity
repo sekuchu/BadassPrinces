@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 155494342}
+    - target: {fileID: 6544857908237125182, guid: 23e1405db2347ea4bb0f4ad591ee4843, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e1405db2347ea4bb0f4ad591ee4843, type: 3}
 --- !u!1 &891030532
