@@ -15,6 +15,12 @@ public class SpriteButton : MonoBehaviour
             Debug.Log("Button is pressed");
             animator.SetBool("IsOpen",isOpen);
         }
+        else
+        {
+            isOpen = false;
+            Debug.Log("Button is closed");
+            animator.SetBool("IsOpen",isOpen);
+        }
     }
 
 }

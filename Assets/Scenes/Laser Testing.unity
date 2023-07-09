@@ -971,6 +971,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4613659680415939966, guid: 7d3dbc422dd1d29458c12f301d7781c0, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613659680415939966, guid: 7d3dbc422dd1d29458c12f301d7781c0, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613659680415939966, guid: 7d3dbc422dd1d29458c12f301d7781c0, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpriteButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3dbc422dd1d29458c12f301d7781c0, type: 3}
 --- !u!1001 &2728685028434949304
