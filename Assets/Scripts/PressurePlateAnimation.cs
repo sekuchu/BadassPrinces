@@ -10,12 +10,14 @@ public class PressurePlateAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        po = GetComponentInChildren<PressureDetection>().pressureOn;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        po = GetComponentInChildren<PresureDection>().pressureOn;
+
         if(po == true)
         {
             animator.SetFloat("activated", 1);

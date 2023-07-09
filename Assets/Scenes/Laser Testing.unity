@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 44212308}
   m_Layer: 0
   m_Name: PressurePlate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -471,6 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11ae118100339048a5490f7b4b59565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  po: 0
+  animator: {fileID: 44212309}
 --- !u!95 &44212309
 Animator:
   serializedVersion: 5
@@ -956,7 +958,7 @@ GameObject:
   - component: {fileID: 2003610428}
   m_Layer: 0
   m_Name: Detection
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1015,7 +1017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressureOn: 0
-  animator: {fileID: 0}
 --- !u!1001 &478514716962588464
 PrefabInstance:
   m_ObjectHideFlags: 0

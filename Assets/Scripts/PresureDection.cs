@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PresureDection : MonoBehaviour
 {
-   public bool pressureOn;
-   public Animator animator;
-    
+   public bool pressureOn;    
     // Start is called before the first frame update
     void Start()
     {
