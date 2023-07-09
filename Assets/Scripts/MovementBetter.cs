@@ -17,6 +17,8 @@ public class MovementBetter : MonoBehaviour
     BoxCollider2D boxCollider;
     Vector2 originalOffset; // Store the original offset value
 
+    public ParticleSystem dust;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +40,11 @@ public class MovementBetter : MonoBehaviour
             {
                 transform.Rotate(0f, 180f, 0f);
                 n = -1;
+                //This code makes particles every time player changes direction. To prevent spam while in air, I am making sure player is grounded.
+                if(gc == true)
+                {
+                    CreateDust();
+                }
             }
             animator.SetFloat("Speed", 1);
         }
@@ -48,6 +55,11 @@ public class MovementBetter : MonoBehaviour
             {
                 transform.Rotate(0f, 180f, 0f);
                 n = 1;
+                //This code makes particles every time player changes direction. To prevent spam while in air, I am making sure player is grounded.
+                if(gc == true)
+                {
+                    CreateDust();
+                }
             }
             animator.SetFloat("Speed", 1);
         }
@@ -61,6 +73,7 @@ public class MovementBetter : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && gc == true)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            CreateDust();
         }
 
         // Crouch with C key
@@ -85,6 +98,12 @@ public class MovementBetter : MonoBehaviour
             jumpPower = 7;
             animator.SetFloat("Crouch", 0);
             isCrouching = false; // Set the crouching flag to false
+        }
+
+        //Function that will create dust particles at player feet
+        void CreateDust()
+        {
+            dust.Play();
         }
     }
 }
