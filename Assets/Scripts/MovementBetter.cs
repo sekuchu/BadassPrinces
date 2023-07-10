@@ -7,7 +7,7 @@ public class MovementBetter : MonoBehaviour
     public Animator animator;
     public Rigidbody2D rb;
     public float speed = 5f;
-    public int jumpPower = 7;
+    public int jumpPower = 10;
     public bool gc;
     public bool ac;
     private int n = 1;
@@ -95,7 +95,7 @@ public class MovementBetter : MonoBehaviour
             boxCollider.offset = originalOffset;
 
             speed = 5f;
-            jumpPower = 7;
+            jumpPower = 10;
             animator.SetFloat("Crouch", 0);
             isCrouching = false; // Set the crouching flag to false
         }

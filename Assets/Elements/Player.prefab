@@ -179,7 +179,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 9c3d88ea263342a4fa697644e2f91548, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -200,7 +200,7 @@ MonoBehaviour:
   animator: {fileID: 1995670145214458180}
   rb: {fileID: 8408503916597910244}
   speed: 5
-  jumpPower: 7
+  jumpPower: 10
   gc: 0
   ac: 0
   dust: {fileID: 8325944375772335379}
