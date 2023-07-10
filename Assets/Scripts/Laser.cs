@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Laser : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class Laser : MonoBehaviour
         {
             Debug.Log("Player Died");
             // ovde moramo skriptu za smrt stavit
+            SceneManager.LoadScene("Level1");
         }
     }
     else
