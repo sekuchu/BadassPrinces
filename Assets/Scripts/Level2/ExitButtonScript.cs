@@ -2,37 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueDoorButton : MonoBehaviour 
+public class ExitButtonScript : MonoBehaviour 
 {
     public bool isOpen;
     public Animator animator;
-    public GameObject blueDoor;
-    public GameObject greenDoor;
-    public GameObject purpleDoor;
+    public GameObject laser;
+
     void Start()
     {
         animator.SetBool("IsOpen", isOpen);
     }
-
     
     public void OpenChest()
     {
         if(!isOpen)
         {
             isOpen = true;
-            blueDoor.SetActive(true);
-            greenDoor.SetActive(false);
-            purpleDoor.SetActive(true);
             Debug.Log("Button is pressed");
+            laser.SetActive(true);
             animator.SetBool("IsOpen",isOpen);
         }
         else
         {
             isOpen = false;
-            blueDoor.SetActive(false);
-            greenDoor.SetActive(true);
-            purpleDoor.SetActive(false);
             Debug.Log("Button is closed");
+            laser.SetActive(false);
             animator.SetBool("IsOpen",isOpen);
         }
     }
