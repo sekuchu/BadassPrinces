@@ -35,7 +35,7 @@ public class MovementBetter : MonoBehaviour
         // A-D movement input for the player
         if (Input.GetKey(KeyCode.A))
         {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
             if (n > 0)
             {
                 transform.Rotate(0f, 180f, 0f);
@@ -50,7 +50,7 @@ public class MovementBetter : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
             if (n < 0)
             {
                 transform.Rotate(0f, 180f, 0f);
@@ -66,13 +66,13 @@ public class MovementBetter : MonoBehaviour
         else
         {
             animator.SetFloat("Speed", 0);
-            rb.velocity = new Vector2(0f, rb.velocity.y);
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         }
 
         // Jump with space/w key
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && gc == true)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             CreateDust();
         }
 
