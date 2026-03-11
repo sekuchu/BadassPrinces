@@ -1,0 +1,9 @@
+# Ignore Unity shader files in language stats
+*.shader linguist-vendored
+*.cginc linguist-vendored
+*.hlsl linguist-vendored
+
+# Ignore Unity generated folders
+Library/** linguist-vendored
+Temp/** linguist-vendored
+Logs/** linguist-vendored
